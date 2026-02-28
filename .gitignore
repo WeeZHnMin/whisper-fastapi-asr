@@ -1,0 +1,75 @@
+﻿# Ignore files at repository root only (keep root folders)
+/*
+!/*/
+!/.gitignore
+
+# =========================
+# asr_minimal (C/C++)
+# =========================
+asr_minimal/build/
+asr_minimal/build-*/
+asr_minimal/CMakeFiles/
+asr_minimal/CMakeCache.txt
+asr_minimal/cmake_install.cmake
+asr_minimal/compile_commands.json
+asr_minimal/*.sln
+asr_minimal/*.slnx
+asr_minimal/*.vcxproj*
+asr_minimal/*.obj
+asr_minimal/*.o
+asr_minimal/*.pdb
+asr_minimal/*.ilk
+asr_minimal/*.lib
+asr_minimal/*.exp
+asr_minimal/*.exe
+asr_minimal/*.dll
+asr_minimal/*.so
+
+# =========================
+# fastapi_whisper (Python)
+# =========================
+fastapi_whisper/.env
+fastapi_whisper/.env.*
+fastapi_whisper/.venv/
+fastapi_whisper/venv/
+fastapi_whisper/**/__pycache__/
+fastapi_whisper/**/*.py[cod]
+fastapi_whisper/.pytest_cache/
+fastapi_whisper/.mypy_cache/
+fastapi_whisper/.ruff_cache/
+fastapi_whisper/.coverage
+fastapi_whisper/.coverage.*
+fastapi_whisper/*.log
+
+# model artifacts (usually large)
+fastapi_whisper/models/*.bin
+fastapi_whisper/models/*.gguf
+fastapi_whisper/models/*.pt
+fastapi_whisper/models/*.onnx
+
+# =========================
+# whisper.cpp integration workspace
+# (upstream has its own .gitignore; keep key local artifacts ignored here too)
+# =========================
+whisper.cpp/.git/
+whisper.cpp/build/
+whisper.cpp/build-*/
+whisper.cpp/build_*/
+whisper.cpp/tmp/
+whisper.cpp/.cache/
+whisper.cpp/.venv/
+whisper.cpp/.vscode/
+whisper.cpp/.vs/
+whisper.cpp/.idea/
+whisper.cpp/compile_commands.json
+whisper.cpp/*.o
+whisper.cpp/*.obj
+whisper.cpp/*.a
+whisper.cpp/*.so
+whisper.cpp/*.dll
+whisper.cpp/*.dylib
+whisper.cpp/*.exe
+
+# OS/editor
+**/.DS_Store
+**/Thumbs.db
