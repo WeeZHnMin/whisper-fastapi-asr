@@ -1,0 +1,16 @@
+services:
+  asr-api:
+    image: whisper-fastapi-mvp
+    build:
+      context: ..
+      dockerfile: fastapi_whisper/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      WHISPER_MODEL_PATH: /models/ggml-base.bin
+      ASR_TIMEOUT_SEC: "180"
+    volumes:
+      - type: bind
+        source: ./models/ggml-base.bin
+        target: /models/ggml-base.bin
+        read_only: true
