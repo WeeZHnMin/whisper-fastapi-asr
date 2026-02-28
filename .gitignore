@@ -2,6 +2,7 @@
 /*
 !/*/
 !/.gitignore
+!/README.md
 
 # =========================
 # asr_minimal (C/C++)
