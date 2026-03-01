@@ -15,8 +15,37 @@ FastAPI + whisper.cpp + custom `asr_minimal` binary speech-to-text service.
 ## Prerequisites
 
 - Docker Desktop (or Docker Engine + Compose)
-- Model file at:
+- Whisper model file at:
   - `fastapi_whisper/models/ggml-base.bin`
+
+## Download Model Weights
+
+The service uses `ggml` Whisper weights (for example `ggml-base.bin`).
+
+Source:
+- https://huggingface.co/ggerganov/whisper.cpp/tree/main
+
+Recommended: use the built-in downloader from `whisper.cpp/models`.
+
+### Windows (PowerShell / CMD)
+
+```bash
+cd whisper.cpp/models
+download-ggml-model.cmd base ../../fastapi_whisper/models
+```
+
+### Linux/macOS
+
+```bash
+cd whisper.cpp/models
+./download-ggml-model.sh base ../../fastapi_whisper/models
+```
+
+After download, verify file exists:
+
+```bash
+ls fastapi_whisper/models/ggml-base.bin
+```
 
 ## Clone
 
